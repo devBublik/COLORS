@@ -1,0 +1,28 @@
+.header {
+    padding: 38px 0;
+    display: grid;
+    grid-template-columns: 280px 1.5fr  238px 112px 24px;
+    gap: 24px;
+    align-items: center;
+    &__logo {
+        margin-right: 172px;
+    }
+    &__contacts {
+        text-align: left;
+        transition: opacity .3s;
+
+        &:hover {
+            opacity: 0.7;
+            cursor: pointer;
+        }
+    }
+    &__label {
+        display: block;
+        opacity: 0.7;
+        font-weight: 400;
+    }
+    &__phone {
+        font-weight: 600;
+        
+    }
+}

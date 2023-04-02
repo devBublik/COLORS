@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body, div, ul, li, p, h1, h2, h3, h4 {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1832px;
+    text-align: center;
+    margin: auto;
+    padding: 0 20px;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    font-family: "Inter" , sans-serif;
+    color: $color-text;
+}
+
+.actions {
+    display: flex;
+    gap: 24px;
+    // grid-area: actions;
+
+    &__el {
+        cursor: pointer;
+        &:hover {
+            filter: invert(0.5);
+        }
+    }
+    &__svg {
+    }
+}
+
+.cart {
+    background-color: $color-green;
+    padding: 4px 8px;
+    border-radius: 50%;
+    font-weight: 500;
+    font-size: 12px;
+}

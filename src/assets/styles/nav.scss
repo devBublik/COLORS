@@ -1,0 +1,33 @@
+.nav {
+    &__list {
+        display: flex;
+        gap: 24px;
+        // grid-area: menu;
+    }
+    &__link {
+        text-transform: uppercase;
+        font-size: 14px;
+        line-height: 1;
+        letter-spacing: 0.06em;
+        border-bottom: 1px solid transparent;
+       
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 0px;
+            height: 1px;
+            background: $color-text;
+            left: 0;
+            bottom: -3px;
+            transition: width .3s;
+        }
+
+        &:hover {
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+}
