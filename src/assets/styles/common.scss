@@ -28,20 +28,7 @@ body {
     color: $color-text;
 }
 
-.actions {
-    display: flex;
-    gap: 24px;
-    // grid-area: actions;
 
-    &__el {
-        cursor: pointer;
-        &:hover {
-            filter: invert(0.5);
-        }
-    }
-    &__svg {
-    }
-}
 
 .cart {
     background-color: $color-green;
@@ -49,4 +36,28 @@ body {
     border-radius: 50%;
     font-weight: 500;
     font-size: 12px;
+}
+
+html,
+body, .App {
+  height: 100%;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.content {
+  flex: 1 0 auto;
+}
+.footer {
+  flex: 0 0 auto;
+    height: 312px;
+    background-color: #000000;
+}
+
+.main {
+    padding: 72px 0 142px;
+    display: flex;
+    gap: 138px;
 }
