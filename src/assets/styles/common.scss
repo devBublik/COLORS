@@ -30,13 +30,7 @@ body {
 
 
 
-.cart {
-    background-color: $color-green;
-    padding: 4px 8px;
-    border-radius: 50%;
-    font-weight: 500;
-    font-size: 12px;
-}
+
 
 html,
 body, .App {
@@ -60,4 +54,10 @@ body, .App {
     padding: 72px 0 142px;
     display: flex;
     gap: 138px;
+}
+
+button {
+    background: none;
+    outline: none;
+    border: none;
 }

@@ -1,13 +1,3 @@
-<script setup>
-import TheHeader from './components/Sections/Header/TheHeader.vue';
-import MainSlider from './components/Slider/MainSlider.vue';
-import FiltersList from './components/Filters/FiltersList.vue';
-import FilterItem from './components/Filters/FilterItem.vue';
-import SelectItem from './components/Sort/SelectItem.vue';
-import ProductsList from './components/Products/ProductsList.vue';
-
-</script>
-
 <template>
     <div class="wrapper">
         <div class="content">
@@ -21,8 +11,16 @@ import ProductsList from './components/Products/ProductsList.vue';
                     <ProductsList :filters="productsFilters"/>
                 </main>
             </div>
+            <ModalItem
+                :is-open="$store.state.isCartOpen"
+                @close="closeCart" 
+                class="cart__modal"
+            >
+                <template #body>
+                    <CartBlock />
+                </template> 
+            </ModalItem>
         </div>
-
         <div class="footer"/>
     </div>
     
@@ -31,19 +29,45 @@ import ProductsList from './components/Products/ProductsList.vue';
 </template>
 
 <script>
+import TheHeader from './components/Sections/Header/TheHeader.vue';
+import MainSlider from './components/Slider/MainSlider.vue';
+import FiltersList from './components/Filters/FiltersList.vue';
+import ProductsList from './components/Products/ProductsList.vue';
+import CartBlock from './components/Cart/CartBlock.vue';
+import ModalItem from './components/Modal/ModalItem.vue';
+
+import { mapState, mapMutations } from 'vuex';
+
     export default {
         name: 'App',
+        components: {
+            TheHeader,
+            MainSlider,
+            FiltersList,
+            ProductsList,
+            CartBlock,
+            ModalItem,
+        },
         data() {
             return {
-                productsFilters: []
+                productsFilters: [],
             }
+        },
+        computed: {
+            ...mapState({
+                isCartOpen: state => state.isCartOpen
+            }),
+           
         },
         methods: {
             selectFilters(filters) {
                 this.productsFilters = [...filters]
                 console.log(this.productsFilters.join('&&'))
-            }
-        }
+            },
+             ...mapMutations({
+                closeCart: 'closeCart',
+            }),
+        },
     }
     
 </script>

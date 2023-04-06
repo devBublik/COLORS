@@ -16,15 +16,14 @@
 
 <script>
     export default {
-        name: 'modal-item',
-         props: {
+        name: 'ModalItem',
+        props: {
             isOpen: {
-            type: Boolean,
-            required: true,
+                type: Boolean,
+                required: true,
             },
         },
         emits: {
-            ok: null,
             close: null,
         },
         methods: {

@@ -13,20 +13,39 @@
            
         </div>
         <HeaderActions/>
-        <div class="cart">4</div>
+        <div
+            class="header__cart"
+            @click="openCart"
+        >
+            {{ cartTotalItems === 0 ? ' ' :  cartTotalItems}}
+        </div>
     </header>
 </template>
 
 <script>
 import HeaderMenu from './HeaderMenu.vue'
 import HeaderActions from './HeaderActions.vue'
-
+import { mapState, mapMutations, mapGetters } from 'vuex'
 
 export default {
     name: 'TheHeader',
     components: {
         HeaderMenu,
         HeaderActions,
+    },
+    computed: {
+        ...mapState({
+            isCartOpen: state => state.isCartOpen,
+        }),
+        ...mapGetters({
+            cartTotalItems: 'cartTotalItems'
+        }),
+    },
+    methods: {
+        ...mapMutations({
+            openCart: 'openCart',
+            closeCart: 'closeCart'
+        }),
     }
 }
 </script>
@@ -58,6 +77,25 @@ export default {
         &__phone {
             font-weight: 600;
             
+        }
+
+        &__cart {
+            background-color: #7BB899;
+            padding: 4px 8px;
+            border-radius: 50%;
+            font-weight: 500;
+            font-size: 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 24px;
+            min-height: 24px;
+            cursor: pointer;
+            transition: filter .3s;
+
+            &:hover {
+                filter: brightness(0.8);
+            }
         }
     }
 </style>
