@@ -1,20 +1,3 @@
-const slidesData = [
-    {
-        slideTitle: 'Краски',
-        slideDesc: 'Идеально подходят для стен и других поверхностей. Найди свой идеальный цвет!'
-    },
-    {
-        slideTitle: 'Краски 1',
-        slideDesc: 'Идеально подходят для стен и других поверхностей. Найди свой идеальный цвет!'
-    },
-    {
-        slideTitle: 'Краски 2',
-        slideDesc: 'Идеально подходят для стен и других поверхностей. Найди свой идеальный цвет!'
-    },
-]
-
-
-
 const productsList = [
     {
         id: 1,
@@ -302,7 +285,6 @@ const filters= [
 ];
 
 export {
-    slidesData,
     filters,
     sortOptions,
     productsList

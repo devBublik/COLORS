@@ -50,12 +50,12 @@ import "swiper/css/effect-fade";
                 {
                     title: 'Краски',
                     desc: 'Идеально подходят для стен и других поверхностей. Найди свой идеальный цвет!',
-                    img: '/src/assets/images/slides/slide.jpg'
+                    img: 'https://ltdfoto.ru/images/2023/04/07/slide.jpg'
                 },
                 {
                     title: 'Краски 2',
                     desc: 'Идеально подходят для стен и других поверхностей. Найди свой идеальный цвет!',
-                    img: '/src/assets/images/slides/slide2.jpg'
+                    img: 'https://ltdfoto.ru/images/2023/04/07/slide2.jpg'
                 }
             ]
         }
