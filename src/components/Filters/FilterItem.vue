@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import { mapMutations, mapState } from 'vuex'
     export default {
         name: 'ToggleItem',
         props: {
@@ -33,20 +34,33 @@
         data() {
             return {
                 checked: false,
-                filters: [],
             }
         },
+        computed: {
+            ...mapState({
+                selectedFilters: state => state.selectedFilters,
+                
+            }),
+        },
         methods: {
+            ...mapMutations({
+                addFilters: 'addFilters',
+                deleteFilter: 'deleteFilter',
+            }),
+
             addFilter(event) {
-                if (!this.filters.length) {
-                    this.filters.push(event.target.value)
-                } 
                 const filter = {
-                        checked: this.checked,
-                        filter: [...this.filters]
-                    }
-               
-                this.$emit('addFilter', filter)
+                    checked: this.checked,
+                    filter: event.target.value
+                }
+                const item = this.selectedFilters.find((item) => item.filter === filter.filter)
+                if (filter.checked && !item) {
+                     console.log('addFilters')
+                    this.addFilters(filter)
+                } else  {
+                    console.log('deleteFilter')
+                    this.deleteFilter(filter)
+                }
             }
         },
     }

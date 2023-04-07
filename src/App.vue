@@ -8,18 +8,21 @@
             <div class="container">
                 <main class="main">
                     <FiltersList @selectFilters="selectFilters"/>
+                    <ProductsHeader/>
                     <ProductsList :filters="productsFilters"/>
                 </main>
             </div>
-            <ModalItem
-                :is-open="$store.state.isCartOpen"
-                @close="closeCart" 
-                class="cart__modal"
-            >
-                <template #body>
-                    <CartBlock />
-                </template> 
-            </ModalItem>
+            <transition name="fade">
+                <ModalItem
+                    :is-open="$store.state.isCartOpen"
+                    @close="closeCart" 
+                    class="cart__modal"
+                >
+                    <template #body>
+                        <CartBlock />
+                    </template> 
+                </ModalItem>
+            </transition>
         </div>
         <div class="footer"/>
     </div>
@@ -35,6 +38,8 @@ import FiltersList from './components/Filters/FiltersList.vue';
 import ProductsList from './components/Products/ProductsList.vue';
 import CartBlock from './components/Cart/CartBlock.vue';
 import ModalItem from './components/Modal/ModalItem.vue';
+import ProductsHeader from './components/Products/ProductsHeader.vue';
+
 
 import { mapState, mapMutations } from 'vuex';
 
@@ -47,6 +52,7 @@ import { mapState, mapMutations } from 'vuex';
             ProductsList,
             CartBlock,
             ModalItem,
+            ProductsHeader,
         },
         data() {
             return {
@@ -71,5 +77,14 @@ import { mapState, mapMutations } from 'vuex';
     }
     
 </script>
+
+<style>
+    .fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+  opacity: 0;
+}
+</style>
 
 

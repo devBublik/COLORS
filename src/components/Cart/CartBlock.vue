@@ -14,7 +14,6 @@
                 class="cart__full"
                 
             >
-                
                 <div class="cart__action">
                     <div class="cart__products">
                         {{ cartTotalItems }} 
@@ -105,6 +104,12 @@ export default {
         display: flex;
         flex-direction: column;
         height: 100%;
+        align-items: center;
+        overflow-y: auto;
+
+        @media (max-width: 780px) {
+            max-width: 100%;
+        }
 
         &__head {
             display: flex;
@@ -120,7 +125,7 @@ export default {
         &__title {
             font-weight: 500;
             letter-spacing: -0.04em;
-            font-size: 30px;
+            font-size: 1.875rem;
         }
 
         &__close {
@@ -149,11 +154,11 @@ export default {
         }
 
         &__products {
-            font-size: 14px;
+            font-size: 0.875rem;
         }
 
         &__summ {
-            font-size: 16px;
+            font-size: 1rem;
             display: block;
             margin-bottom: 6px;
             font-weight: 400;
@@ -161,7 +166,7 @@ export default {
 
         &__clear {
             text-transform: uppercase;
-            font-size: 12px;
+            font-size: 0.75rem;
             color: #e6e6e6;
             cursor: pointer;
             transition: filter .3s;
@@ -180,7 +185,7 @@ export default {
             display: flex;
             align-items: center;
             justify-content: space-between;
-
+            width: 100%;
         }
 
         &__buy {
@@ -189,7 +194,7 @@ export default {
             padding: 20px 58px;
             text-transform: uppercase;
             font-weight: 500;
-            font-size: 12px;
+            font-size: 0.75rem;
             letter-spacing: 0.06em;
             cursor: pointer;
             transition: filter .3s;
@@ -202,17 +207,29 @@ export default {
 
             .modal__wrapper {
                 justify-content: flex-end;
+
+                @media (max-width: 780px) {
+                    align-items: flex-end;
+                }
             }
 
             .modal__content {
                 height: 100%;
                 max-width: 600px;
                 width: 100%;
+
+                @media (max-width: 780px) {
+                    height: 50%;
+                    max-width: 100%;
+                }
             }
+
+            
         }
 
         &__content {
             flex: 1 0 auto;
+            width: 100%;
         }
     }
 </style>

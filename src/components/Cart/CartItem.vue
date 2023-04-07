@@ -89,13 +89,13 @@ import {mapState, mapActions, mapMutations} from 'vuex'
         }
 
         &__count {
-            margin: 0 20px;
+            margin: 0 22px;
         }
 
         &__btn {
             background: #F2F2F2;
             border-radius: 4px;
-            padding: 4px 12px;
+            padding: 4px 18px;
             cursor: pointer;
             transition: filter .3s;
             &:hover {
@@ -110,6 +110,8 @@ import {mapState, mapActions, mapMutations} from 'vuex'
                 margin-left: 36px;
                 filter: opacity(0.5);
                 transition: filter .3s;
+                padding: 4px 12px;
+                background-repeat: no-repeat;
 
                 &:hover {
                     filter: opacity(1)
@@ -123,11 +125,17 @@ import {mapState, mapActions, mapMutations} from 'vuex'
                 height: 24px;
                 margin-left: 36px;
                 transition: filter .3s;
+                background-repeat: no-repeat;
 
                 &:hover {
                     filter: opacity(0.6)
                 }
             }
+        }
+
+        &__info {
+            max-width: 208px;
+            width: 100%;
         }
 
         &_disabled {
@@ -152,7 +160,7 @@ import {mapState, mapActions, mapMutations} from 'vuex'
 
         &__price {
             font-weight: 600;
-            font-size: 16px;
+            font-size: 1rem;
         }
             
 

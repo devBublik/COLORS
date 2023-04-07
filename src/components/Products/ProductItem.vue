@@ -52,6 +52,10 @@ import { mapState, mapActions, mapMutations } from 'vuex'
         border-bottom: 1px solid #e6e6e6;
         padding-bottom: 14px;
 
+        @media (max-width: 780px) {
+            max-width: 156px;
+        }
+
         &:hover {
             .product__add {
                 opacity: 1;
@@ -59,9 +63,14 @@ import { mapState, mapActions, mapMutations } from 'vuex'
         }
 
         &__img {
-            width: 278px;
+            max-width: 278px;
             height: 278px;
             margin-bottom: 16px;
+
+            @media (max-width: 780px) {
+                max-width: 156px;
+                height: 156px;
+            }
 
             img {
                 width: 100%;

@@ -76,6 +76,8 @@ import "swiper/css/effect-fade";
             left: 0;
             top: 0;
             object-fit: cover;
+            width: 100%;
+            height: 100%;
         }
 
         &__info {
@@ -103,7 +105,7 @@ import "swiper/css/effect-fade";
             width: 20px;
             height: 40px;
             position: absolute;
-            bottom: 22%;
+            bottom: 29%;
             z-index: 2;
             background-size: contain;
             cursor: pointer;

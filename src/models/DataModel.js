@@ -13,7 +13,9 @@ const slidesData = [
     },
 ]
 
-const products = [
+
+
+const productsList = [
     {
         id: 1,
         title: "Краска Wallquest, Brownsone MS90102",
@@ -301,7 +303,7 @@ const filters= [
 
 export {
     slidesData,
-    products,
     filters,
-    sortOptions
+    sortOptions,
+    productsList
 };

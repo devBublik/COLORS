@@ -51,9 +51,22 @@ body, .App {
 }
 
 .main {
+    display: grid;
+    grid-template-areas: 'filters head head'
+                        'filters products products'
+                        'filters products products'
+    ;
     padding: 72px 0 142px;
-    display: flex;
-    gap: 138px;
+    grid-template-columns: 304px 3fr;
+
+    @media (max-width:1080px) {
+        grid-template-areas: 'filters head'
+        'products products';
+    }
+
+     @media (max-width:780px) {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 button {

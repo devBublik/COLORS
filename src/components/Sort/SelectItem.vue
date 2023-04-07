@@ -65,7 +65,7 @@ export default{
         background: white;
 
         &__label {
-            font-size: 12px;
+            font-size: 0.75rem;
             text-transform: uppercase;
             border: none;
             letter-spacing: 0.06em;
