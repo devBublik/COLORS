@@ -60,12 +60,25 @@ body, .App {
     grid-template-columns: 304px 3fr;
 
     @media (max-width:1080px) {
-        grid-template-areas: 'filters head'
+        grid-template-areas: 'title title' 
+        'filters head'
         'products products';
     }
 
      @media (max-width:780px) {
         grid-template-columns: 1fr 1fr;
+    }
+    &__title {
+        display: none;
+
+        @media (max-width: 540px) {
+            display: block;
+            font-size: 36px;
+            color: #1F2020;
+            text-align: left;
+            grid-area: title;
+            margin-bottom: 48px;
+        }
     }
 }
 

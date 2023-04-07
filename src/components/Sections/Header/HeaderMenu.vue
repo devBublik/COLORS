@@ -78,26 +78,57 @@ export default({
         &__list {
             display: flex;
             gap: 24px;
+            transition: transform .3s cubic-bezier(0.075, 0.82, 0.165, 1);
 
             @media (max-width: 1080px) {
-                display: none;
+                opacity: 0;
+                transform: translateX(-1000px);
+                position: absolute;
             }
 
             &_mobile {
                 position: absolute;
-                z-index: 2;
+                z-index: 3;
                 background: white;
                 top: 104px;
                 flex-direction: column;
-                left: 0;
+                left: -20px;
                 padding: 44px 61px;
                 border-radius: 0 14px 14px 0;
                 align-items: flex-start;
                 display: flex;
                 width: 70%;
+                opacity: 1;
+                transform: translateX(0);
+                border: 1px solid #e6e6e6;
+                border-left-color: transparent;
+
+                .nav__item {
+                    animation: transfrom 0.5s ease 1 both;
+                    &:first-of-type {
+                        animation-delay: 0.1s;
+                    }
+
+                    &:nth-of-type(2) {
+                        animation-delay: 0.2s;
+                    }
+
+                    &:nth-of-type(3) {
+                        animation-delay: 0.3s;
+                    }
+
+                    &:nth-of-type(4) {
+                        animation-delay: 0.4s;
+                    }
+
+                    &:nth-of-type(5) {
+                        animation-delay: 0.5s;
+                    }
+                }
             }
          
         }
+
         &__link {
             text-transform: uppercase;
             font-size: 0.875rem;
@@ -124,5 +155,19 @@ export default({
                 }
             }
         }
+
+ 
+
+        @keyframes transfrom {
+             from {
+                opacity: 0;
+                transform: translateX(-5rem);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }   
     }
 </style>

@@ -80,7 +80,15 @@ import { mapState, mapActions, mapMutations, mapGetters } from 'vuex';
             display: flex;
             gap: 16px 24px;
             flex-wrap: wrap;
-            justify-content: space-between;
+
+            @media (max-width: 1500px) {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+            @media (max-width: 540px) {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     }
 

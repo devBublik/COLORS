@@ -98,6 +98,10 @@ import "swiper/css/effect-fade";
         display: flex;
         align-items: center;
         justify-content: center;
+
+        @media (max-width: 540px) {
+            display: none;
+        }
        
         .swiper-button-prev, .swiper-button-next  {
             background-image: url('../../assets/icons/arrow.svg');
@@ -113,6 +117,10 @@ import "swiper/css/effect-fade";
 
             &:hover {
                 filter: brightness(0.5)
+            }
+
+            @media (max-width: 540px) {
+                display: none;
             }
         }
 
@@ -158,6 +166,10 @@ import "swiper/css/effect-fade";
                 &-active {
                     opacity: 1;
                 }
+            }
+
+            @media (max-width: 540px) {
+                display: none;
             }
         }
 

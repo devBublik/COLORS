@@ -7,6 +7,7 @@
             <MainSlider/>
             <div class="container">
                 <main class="main">
+                    <h1 class="main__title">Краски</h1>
                     <FiltersList @selectFilters="selectFilters"/>
                     <ProductsHeader/>
                     <ProductsList :filters="productsFilters"/>

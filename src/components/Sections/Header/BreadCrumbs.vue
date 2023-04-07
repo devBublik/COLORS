@@ -4,7 +4,6 @@
         <span class="breadcrumbs__item">Продукты</span>
         <span class="breadcrumbs__item">Краски</span>
     </div>    
-
 </template>
 
 <script>
@@ -27,7 +26,8 @@
         &__item {
             position: relative;
             display: inline-block;
-            padding-right: 8px;
+            padding-right: 20px;
+            opacity: 0.7;
 
             &:not(&:last-of-type) {
                 &::after {
@@ -37,11 +37,11 @@
                     height: 3px;
                     border-radius: 50%;
                     background: #e6e6e6;
-                    right: 0;
+                    right: 10px;
+                    top: 4px;
+                    position: absolute;
                 }
-            }   
-
-            
+            }  
         }
     }
 </style>

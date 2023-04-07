@@ -70,12 +70,18 @@ import {mapState, mapActions, mapMutations} from 'vuex'
         align-items: center;
         padding: 26px 0;
 
-        
+        @media (max-width: 780px) {
+            justify-content: space-between;
+        }
 
         &__image {
             width: 96px;
             height: 96px;
             margin-right: 8px;
+
+            @media (max-width: 420px) {
+                height: auto;
+            }
         }
 
         &__img {
@@ -85,11 +91,14 @@ import {mapState, mapActions, mapMutations} from 'vuex'
         &__controls {
             display: flex;
             align-items: center;
-            
         }
 
         &__count {
             margin: 0 22px;
+
+            @media (max-width: 540px) {
+                margin: 0 8px;
+            }
         }
 
         &__btn {
@@ -98,8 +107,17 @@ import {mapState, mapActions, mapMutations} from 'vuex'
             padding: 4px 18px;
             cursor: pointer;
             transition: filter .3s;
+
             &:hover {
                 filter: brightness(0.9)
+            }
+
+            @media (max-width: 540px) {
+                padding: 4px 12px;
+            }
+
+            @media (max-width: 540px) {
+                padding: 4px 8px;
             }
 
             &_del {
@@ -115,6 +133,14 @@ import {mapState, mapActions, mapMutations} from 'vuex'
 
                 &:hover {
                     filter: opacity(1)
+                }
+
+                @media (max-width: 540px) {
+                    margin-left: 16px;
+                }
+
+                @media (max-width: 420px) {
+                    margin-left: 8px;
                 }
             }
 
@@ -146,9 +172,6 @@ import {mapState, mapActions, mapMutations} from 'vuex'
                 opacity: 0.6;
                 cursor: no-drop;
             }
-
-
-           
         }
 
         &__title {
@@ -156,6 +179,10 @@ import {mapState, mapActions, mapMutations} from 'vuex'
             width: 100%;
             font-weight: 300;
             margin-bottom: 16px;
+
+            @media (max-width: 540px) {
+                font-size: 12px;
+            }
         }
 
         &__price {

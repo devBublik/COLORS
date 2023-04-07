@@ -109,6 +109,11 @@ export default {
 
         @media (max-width: 780px) {
             max-width: 100%;
+            padding: 24px;
+        }
+
+        @media (max-width: 420px) {
+            padding: 24px 16px;
         }
 
         &__head {
@@ -198,8 +203,13 @@ export default {
             letter-spacing: 0.06em;
             cursor: pointer;
             transition: filter .3s;
+
             &:hover {
                 filter: opacity(0.9);
+            }
+
+            @media (max-width: 540px) {
+                padding: 20px;
             }
         }
 

@@ -51,14 +51,22 @@ import { mapState, mapActions, mapMutations } from 'vuex'
         text-align: left;
         border-bottom: 1px solid #e6e6e6;
         padding-bottom: 14px;
-
-        @media (max-width: 780px) {
-            max-width: 156px;
-        }
+        
+       
 
         &:hover {
             .product__add {
                 opacity: 1;
+            }
+        }
+
+        @media (max-width: 780px) {
+            max-width: 156px;
+
+             &:hover {
+                .product__add {
+                    background: #7BB899;
+                }
             }
         }
 
@@ -98,7 +106,14 @@ import { mapState, mapActions, mapMutations } from 'vuex'
             justify-content: center;
             cursor: pointer;
             opacity: 0;
-            transition: opacity .3s;
+            transition: opacity .3s, background .3s;
+
+            @media (max-width: 780px) {
+                width: 40px;
+                height: 24px;
+                opacity: 1;
+                background: #F2F2F2;
+            }
         }
 
         &__footer {

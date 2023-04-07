@@ -22,6 +22,13 @@
                 class="filters__modal"
             >
                 <template #body>
+                    <button
+                        class="filters__close"
+                        v-show="widthScreen < 540"
+                        @click="isMobile = false"
+                    >
+                        <span class="filters__close-btn"></span>
+                    </button>
                     <FilterItem
                         v-for="filter in filters"
                         :key="filter.val"
@@ -110,7 +117,9 @@ import ModalItem from '../Modal/ModalItem.vue';
                 width: 100%;
                 border-radius: 24px 24px 0px 0px;
                 align-items: flex-start;
-                padding: 12px 24px;
+                padding: 12px 24px 114px;
+                height: auto;
+                overflow: auto;
             }
         }
 
@@ -141,6 +150,37 @@ import ModalItem from '../Modal/ModalItem.vue';
                 width: 10px;
                 height: 10px;
             }
+        }
+
+        &__modal {
+            @media (max-width: 540px) {
+                .modal__wrapper {
+                    align-items: flex-end;
+                }
+            }
+        }
+
+        &__close {
+            width: 100%;
+            display: inline-flex;
+            justify-content: center;
+            margin-bottom: 38px;
+            cursor: pointer;
+            transition: filter .3s;
+
+            &:hover {
+                filter: brightness(5);
+            }
+            
+        }
+
+        &__close-btn {
+            width: 28px;
+            height: 4px;
+            background: #1F2020;
+            opacity: 0.6;
+            border-radius: 40px;
+            display: block;
         }
     }
 </style>

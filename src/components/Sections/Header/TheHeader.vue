@@ -26,7 +26,7 @@
 <script>
 import HeaderMenu from './HeaderMenu.vue'
 import HeaderActions from './HeaderActions.vue';
-import BreadCrumbs from '../../Breadcrumbs/Breadcrumbs.vue';
+import BreadCrumbs from './BreadCrumbs.vue';
 import { mapState, mapMutations, mapGetters } from 'vuex'
 
 export default {
@@ -61,6 +61,7 @@ export default {
         gap: 24px;
         align-items: center;
         position: relative;
+        
 
         @media (max-width: 1500px) {
             display: flex;
