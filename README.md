@@ -2,7 +2,7 @@
 
 Test task 
 
-[Deploy] - (https://devbublik-colors.netlify.app/)
+Deploy - (https://devbublik-colors.netlify.app/)
 
 ## Recommended IDE Setup
 
