@@ -78,7 +78,6 @@ export default({
         &__list {
             display: flex;
             gap: 24px;
-            transition: transform .3s cubic-bezier(0.075, 0.82, 0.165, 1);
 
             @media (max-width: 1080px) {
                 opacity: 0;
@@ -93,7 +92,7 @@ export default({
                 top: 104px;
                 flex-direction: column;
                 left: -20px;
-                padding: 44px 61px;
+                padding: 44px 24px;
                 border-radius: 0 14px 14px 0;
                 align-items: flex-start;
                 display: flex;
@@ -102,6 +101,7 @@ export default({
                 transform: translateX(0);
                 border: 1px solid #e6e6e6;
                 border-left-color: transparent;
+                transition: opacity .5s;
 
                 .nav__item {
                     animation: transfrom 0.5s ease 1 both;
@@ -169,5 +169,15 @@ export default({
                 transform: translateX(0);
             }
         }   
+
+        @keyframes opacity {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
     }
 </style>
